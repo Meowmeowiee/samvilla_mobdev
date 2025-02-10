@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const int itemCount = 20;
+
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
@@ -7,7 +9,11 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
-        return const ListTile();
+        return ListTile(
+          title: Text('Item ${(index + 1)}'),
+          leading: Icon(Icons.person),
+          trailing: Icon(Icons.select_all),
+        );
       },
     );
   }
