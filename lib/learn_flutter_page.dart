@@ -22,82 +22,86 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
           icon: const Icon(Icons.arrow_back_ios),
         ),
       ),
-      body: Column(
-        children: [
-          Image.asset('images/einstein.jpg'),
-          const SizedBox(
-            height: 10,
-          ),
-          const Divider(
-            color: Colors.black,
-          ),
-          Container(
-            margin: const EdgeInsets.all(10.0),
-            padding: const EdgeInsets.all(10.0),
-            color: Colors.blueGrey,
-            width: double.infinity,
-            child: const Center(
-              child: Text('This is a text widget',
-                  style: TextStyle(color: Colors.white)),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset('images/einstein.jpg'),
+            const SizedBox(
+              height: 10,
             ),
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: isSwitch ? Colors.green : Colors.blue,
+            const Divider(
+              color: Colors.black,
             ),
-            onPressed: () {
-              debugPrint('Elevated Button');
-            },
-            child: Text('Elevated Button'),
-          ),
-          OutlinedButton(
-            onPressed: () {
-              debugPrint('Outlined Button');
-            },
-            child: Text('Outlined Button'),
-          ),
-          TextButton(
-            onPressed: () {
-              debugPrint('Text Button');
-            },
-            child: Text('Text Button'),
-          ),
-          GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: () {
-              debugPrint('This is the row');
-            },
-            child: Row(
-              //horizontal
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Icon(
-                  Icons.local_fire_department,
-                  color: Colors.blue,
-                ),
-                Text('Row Widget'),
-                Icon(
-                  Icons.local_fire_department,
-                  color: Colors.blue,
-                ),
-              ],
+            Container(
+              margin: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
+              color: Colors.blueGrey,
+              width: double.infinity,
+              child: const Center(
+                child: Text('This is a text widget',
+                    style: TextStyle(color: Colors.white)),
+              ),
             ),
-          ),
-          Switch(
-              value: isSwitch,
-              onChanged: (bool newBool) {
-                setState(() {
-                  isSwitch = newBool;
-                });
-              }),
-          Checkbox(
-              value: isCheckBox,
-              onChanged: (bool? newBool) {
-                setState(() {
-                  isCheckBox = newBool;
-                });
-              })
-        ],
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: isSwitch ? Colors.green : Colors.blue,
+              ),
+              onPressed: () {
+                debugPrint('Elevated Button');
+              },
+              child: Text('Elevated Button'),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                debugPrint('Outlined Button');
+              },
+              child: Text('Outlined Button'),
+            ),
+            TextButton(
+              onPressed: () {
+                debugPrint('Text Button');
+              },
+              child: Text('Text Button'),
+            ),
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                debugPrint('This is the row');
+              },
+              child: Row(
+                //horizontal
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Icon(
+                    Icons.local_fire_department,
+                    color: Colors.blue,
+                  ),
+                  Text('Row Widget'),
+                  Icon(
+                    Icons.local_fire_department,
+                    color: Colors.blue,
+                  ),
+                ],
+              ),
+            ),
+            Switch(
+                value: isSwitch,
+                onChanged: (bool newBool) {
+                  setState(() {
+                    isSwitch = newBool;
+                  });
+                }),
+            Checkbox(
+                value: isCheckBox,
+                onChanged: (bool? newBool) {
+                  setState(() {
+                    isCheckBox = newBool;
+                  });
+                }),
+            Image.network(
+                'https://www.shutterstock.com/shutterstock/photos/1330062185/display_1500/stock-photo-portrait-of-albert-einstein-abstract-pop-art-illuatration-1330062185.jpg')
+          ],
+        ),
       ),
     );
   }
